@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DeathNoteImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">82-tdd-deathnote</a> &gt; <a href="index.source.html" class="el_package">it.unibo.deathnote.impl</a> &gt; <span class="el_source">DeathNoteImpl.java</span></div><h1>DeathNoteImpl.java</h1><pre class="source lang-java linenums">package it.unibo.deathnote.impl;
+
+import it.unibo.deathnote.api.DeathNote;
+import java.util.Map;
+import java.util.LinkedHashMap;
+import java.util.Objects;
+
+/**
+ * la classe implementa DeathNote.
+ */
+
+public final class DeathNoteImpl implements DeathNote {
+    private final Map&lt;String, Death&gt; deaths;
+    private String lastWrittenName;
+
+    /**
+     * creazione del libro.
+     */
+
+<span class="fc" id="L20">    public DeathNoteImpl() {</span>
+<span class="fc" id="L21">        deaths = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L22">        lastWrittenName = null;</span>
+<span class="fc" id="L23">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getRule(final int ruleNumber) {
+<span class="pc bpc" id="L30" title="1 of 4 branches missed.">        if (ruleNumber &lt; 1 || ruleNumber &gt; RULES.size()) {</span>
+<span class="fc" id="L31">            throw new IllegalArgumentException(&quot;rule number deve essere &gt;= 1 e &lt;= rules.size&quot;);</span>
+        }
+<span class="nc" id="L33">        final int i = ruleNumber;</span>
+<span class="nc" id="L34">        return RULES.get(i - 1);</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void writeName(final String name) {
+<span class="fc" id="L42">        Objects.requireNonNull(name);</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if (name.isBlank()) {</span>
+<span class="nc" id="L44">            throw new IllegalArgumentException(&quot;il nome non può essere bianco&quot;);</span>
+        }
+<span class="fc" id="L46">        deaths.put(name, new Death(System.currentTimeMillis()));</span>
+<span class="fc" id="L47">        lastWrittenName = name;</span>
+<span class="fc" id="L48">    }</span>
+
+    /**
+     * sostituisce cause e details.
+     * 
+     * @param cause la nuova causa di morte
+     * @param details i nuovi dettagli di morte
+     * @return true se l'operazione si è conclusa correttamente, false altrimenti
+     */
+    public boolean updateLastDeath(final String cause, final String details) {
+<span class="pc bpc" id="L58" title="1 of 4 branches missed.">        if (this.lastWrittenName == null || !deaths.containsKey(lastWrittenName)) {</span>
+<span class="fc" id="L59">            return false;</span>
+        }
+<span class="fc" id="L61">        final Death current = deaths.get(lastWrittenName);</span>
+<span class="fc" id="L62">        Death update = current;</span>
+
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (cause != null) {</span>
+<span class="fc" id="L65">            update = update.updateCause(cause);</span>
+        }
+
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (details != null) {</span>
+<span class="fc" id="L69">            update = update.updateDetails(details);</span>
+        }
+
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if (Objects.equals(current, update)) {</span>
+<span class="fc" id="L73">            return false;</span>
+        }
+
+<span class="fc" id="L76">        deaths.put(lastWrittenName, update);</span>
+<span class="fc" id="L77">        return true;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean writeDeathCause(final String cause) {
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">        if (cause == null) {</span>
+<span class="nc" id="L86">            throw new IllegalStateException(&quot;cause non può essere null&quot;);</span>
+        }
+<span class="fc" id="L88">        return updateLastDeath(cause, null);</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean writeDetails(final String details) {
+<span class="pc bpc" id="L96" title="1 of 2 branches missed.">        if (details == null) {</span>
+<span class="nc" id="L97">            throw new IllegalStateException(&quot;details non puo essere null&quot;);</span>
+        }
+<span class="fc" id="L99">        return updateLastDeath(null, details);</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getDeathCause(final String name) {
+
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">        if (!isNameWritten(name)) {</span>
+<span class="nc" id="L109">            throw new IllegalArgumentException(&quot;il nome non puo essere null&quot;);</span>
+        }
+<span class="fc" id="L111">        return deaths.get(name).cause;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getDeathDetails(final String name) {
+<span class="pc bpc" id="L119" title="1 of 2 branches missed.">        if (!isNameWritten(name)) {</span>
+<span class="nc" id="L120">            throw new IllegalArgumentException(&quot;il nome non puo essere null&quot;);</span>
+        }
+<span class="fc" id="L122">        return deaths.get(name).details;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean isNameWritten(final String name) {
+<span class="fc" id="L130">        return deaths.containsKey(name);</span>
+    }
+
+    private static final class Death {
+
+        private static final String DEFAULT_CAUSE = &quot;heart attack&quot;;
+        private static final String DEFAULT_DETAIL = &quot;&quot;;
+        private static final long CAUSE_TIMEOUT = 40;
+        private static final long DETAILS_TIMEOUT = 6000 + CAUSE_TIMEOUT;
+        private final String cause;
+        private final String details;
+        private final long timeOfWrite;
+
+<span class="fc" id="L143">        Death(final String cause, final String details, final long timeOfWrite) {</span>
+<span class="fc" id="L144">            this.cause = cause;</span>
+<span class="fc" id="L145">            this.details = details;</span>
+<span class="fc" id="L146">            this.timeOfWrite = timeOfWrite;</span>
+<span class="fc" id="L147">        }</span>
+
+        Death(final long timeOfDeath) {
+<span class="fc" id="L150">            this(DEFAULT_CAUSE, DEFAULT_DETAIL, timeOfDeath);</span>
+<span class="fc" id="L151">        }</span>
+
+        public Death updateCause(final String newCause) {
+<span class="fc bfc" id="L154" title="All 2 branches covered.">            if (System.currentTimeMillis() &lt; timeOfWrite + CAUSE_TIMEOUT) {</span>
+<span class="fc" id="L155">                return new Death(newCause, this.details, System.currentTimeMillis());</span>
+            }
+<span class="fc" id="L157">            return this;</span>
+        }
+
+        public Death updateDetails(final String newDetails) {
+<span class="fc bfc" id="L161" title="All 2 branches covered.">             if (System.currentTimeMillis() &lt; timeOfWrite + DETAILS_TIMEOUT) {</span>
+<span class="fc" id="L162">                return new Death(this.cause, newDetails, System.currentTimeMillis());</span>
+            }
+<span class="fc" id="L164">            return this;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.14.202510111229</span></div></body></html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.unibo.deathnote.TestDeathNote" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-16T23:34:40.571Z" hostname="BALDA" time="6.31">
+  <properties/>
+  <testcase name="testHumanIsWriten()" classname="it.unibo.deathnote.TestDeathNote" time="0.094"/>
+  <testcase name="testRuleNotEmpty()" classname="it.unibo.deathnote.TestDeathNote" time="0.003"/>
+  <testcase name="testDeathDetails()" classname="it.unibo.deathnote.TestDeathNote" time="6.107"/>
+  <testcase name="testRules()" classname="it.unibo.deathnote.TestDeathNote" time="0.001"/>
+  <testcase name="testCauseOfDeath()" classname="it.unibo.deathnote.TestDeathNote" time="0.102"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

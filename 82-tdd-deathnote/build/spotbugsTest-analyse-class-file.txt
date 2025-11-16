@@ -1,0 +1,1 @@
+C:\Users\loren\Documents\EserciziJava\lab08\82-tdd-deathnote\build\classes\java\test\it\unibo\deathnote\TestDeathNote.class
