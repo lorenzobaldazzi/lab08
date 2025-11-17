@@ -1,0 +1,15 @@
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\api\DrawNumber.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\api\DrawNumberController.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\api\DrawNumberView.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\api\DrawResult.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\controller\DrawNumberControllerImpl.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\LaunchApp.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\model\Configuration$Builder.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\model\Configuration.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\model\DrawNumberImpl.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\view\DrawNumberStandardOutputView.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\view\DrawNumberSwingView$1.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\view\DrawNumberSwingView$2.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\view\DrawNumberSwingView$3.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\view\DrawNumberSwingView$4.class
+C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\build\classes\java\main\it\unibo\mvc\view\DrawNumberSwingView.class

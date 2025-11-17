@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="12.1.1">
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\api\DrawNumber.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\api\DrawNumberController.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\api\DrawNumberView.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\api\DrawResult.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\controller\DrawNumberControllerImpl.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\LaunchApp.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\model\Configuration.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\model\DrawNumberImpl.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\view\DrawNumberStandardOutputView.java">
+</file>
+<file name="C:\Users\loren\Documents\EserciziJava\lab08\83-mvc-gui-reflection\src\main\java\it\unibo\mvc\view\DrawNumberSwingView.java">
+</file>
+</checkstyle>
